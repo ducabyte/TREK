@@ -28,7 +28,15 @@ Interessados no projeto em seu estado final:
 
 ### Live 001
 
-     _Neste momento ainda não liberei os videos no youtube_ 
+     _Neste momento ainda não liberei os videos no youtube. O video correspondente a esta live estará disponível no meu canal https://www.youtube.com/@ducabyte, ainda estou organizando a playlist_.
      Esta live é bate papo inicial sobre como será o Devlog na sua execução em lives e como o estou estruturando em termos de organização de projeto.
      TODO linkar a url da live quando liberar no youtube
      _Estou anotando isso na branch main, mas o conteúdo começará a partir da branch live-001. Por ora, estou apenas criando a estrutura do repositório_.
+
+     Agora, nesta branch (live-001) começo a falar sobre as características da migração da antiga adaptação do SuperStarTrek para o TREK, bem como as ferramentas que usarei para me manter organizado.
+
+     Sobre várias referências que mencionarei no video, elas estarão listadas ou em links em uma seção apropriada do projeto, ou estarão em ./DOC. _Ainda estou organizando isto também, e elas começarão a ficar disponíveis nas próximas lives_.
+
+     De qualquer maneira, a revista onde se encontra o código original está agora disponível em ./DOC, você pode procurar o artigo browseando o pdf até a página 98 e por enquanto, apenas passar os olhos sobre o artigo e o código fonte, sem maiores preocupações que encontrar certos padrões (p.ex, quem já conhece programação vai ver alguns IFs, alguns FORs, etc)
+
+     
