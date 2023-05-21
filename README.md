@@ -39,4 +39,13 @@ Interessados no projeto em seu estado final:
 
      De qualquer maneira, a revista onde se encontra o código original está agora disponível em ./DOC, você pode procurar o artigo browseando o pdf até a página 98 e por enquanto, apenas passar os olhos sobre o artigo e o código fonte, sem maiores preocupações que encontrar certos padrões (p.ex, quem já conhece programação vai ver alguns IFs, alguns FORs, etc)
 
+### Live 002
+
+    Nesta live continuamos o papo, verificamos o git local, criamos o respositório no github https://github.com/ducabyte/TREK e iniciamos o projeto com uma estrutura local de diretórios e começamos a anotar o README.
+    Esta live se divide em dois videos, TREK Devlog 002 parte 1 e TREK Devlog 002 parte 2 (tive um problema com minha autorização no github, por isso tive que parar o primeiro e continuar no segundo depois)
+
+    Nota: só consegui resolver o problema na próxima live, a 003. Mas sempre se aprende alguma coisa, dá pra assistir...
+
+    TODO editar a parte 1 para tirar o final de pausa/encerramento que ficou muito grande.
+
      
