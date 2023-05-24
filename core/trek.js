@@ -37,12 +37,12 @@ const CK=A            // 29 LET CK=A            // 1
 const CE=A            // 30 LET CE=A            // 1
 const CC=eval("4E4")  // 31 LET CC=VAL "4E4"    // 40000
 const Z=eval("5110")  // 33 LET Z=VAL "5110"    // 5110
-let U = new Array(G)        // 45 DIM U(G)
+let U = new Array(G)            // 45 DIM U(G)
 for (let i=0; i <= G; i++) {    // 100 FOR I=A TO G
     U[i]=A                      // 105 LET U(I)=A
 }                               // 110 NEXT I
-let Q$ = new Array(F)    // 153 DIM Q$(F,K)
-for (let i=0; i <= F; i++) {    // 100 FOR I=A TO G
+let Q$ = new Array(F)           // 153 DIM Q$(F,K)
+for (let i=0; i <= F; i++) {    // Cria a dimensão K em (F, K)
     Q$[i] = new Array(K)
 }
 const D$="VERDE"        // 154 LET D$= "VERDE"
