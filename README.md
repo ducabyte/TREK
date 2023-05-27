@@ -68,3 +68,17 @@ Interessados no projeto em seu estado final:
         adicionou o manual de operações do TK 2000
         
         iniciou a conversão de variáveis e constantes globais
+
+### live 005
+
+    Verificamos valores reais (fracionários) de duas das variáveis globais (r e q) contra valores obtidos pelo original em um emulador.
+    Começamos a atacar o código, focando nas exibições de "telas" (comando PRINT do basic original). Para isso, tentamos criar funções com mesmo nome no javascript
+        PRINT "texto" -----> PRINT("TEXTO), onde PRINT é um function PRINT(msg)
+        A mesma coisa com CLS, porém deixamos como não implementada uma vez que ainda só utilizamos a console
+    Alguns trechos de código renomemos para colocar um underscore no número de linha, transformando esse trecho de código em uma função
+        150 CLS: PRINT "******" : RETURN
+        Ficou como:
+            function _150() {
+                CLS()
+                PRINT ("******")
+            }
