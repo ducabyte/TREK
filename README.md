@@ -69,16 +69,18 @@ Interessados no projeto em seu estado final:
         
         iniciou a conversão de variáveis e constantes globais
 
-### live 005
+### live 005 partes 1 e 2
 
     Verificamos valores reais (fracionários) de duas das variáveis globais (r e q) contra valores obtidos pelo original em um emulador.
     Começamos a atacar o código, focando nas exibições de "telas" (comando PRINT do basic original). Para isso, tentamos criar funções com mesmo nome no javascript
         PRINT "texto" -----> PRINT("TEXTO), onde PRINT é um function PRINT(msg)
-        A mesma coisa com CLS, porém deixamos como não implementada uma vez que ainda só utilizamos a console
-    Alguns trechos de código renomemos para colocar um underscore no número de linha, transformando esse trecho de código em uma função
+        A mesma coisa com CLS, porém deixamos como não implementada uma vez que ainda só utilizamos a console (atualmente, está como console.clear())
+    Alguns trechos de código renomeamos para colocar um underscore no número de linha, transformando esse trecho de código em uma função
         150 CLS: PRINT "******" : RETURN
         Ficou como:
             function _150() {
                 CLS()
                 PRINT ("******")
             }
+    Fizemos também uma função PRINT_AT (que fornece linha e coluna) e uma função TAB (que retorna uma quantidade de espaços para ser inserida nas mensagens)
+    Refatoramos as funções em UTILS para melhor exportarmos o módulo.

@@ -5,7 +5,7 @@
 
 // TREK by Duca 2023 - adaptação para nodeJS
 
-const { PRINT, CLS } = require('../UTILS/utils')
+const { PRINT, PRINT_AT, TAB, CLS } = require('../UTILS/utils')
 
 // declaração das constantes e variáveis globais
 const N = eval("0")   // 1 LET N=VAL "0"       // 0
@@ -57,12 +57,14 @@ _9600()                                             // 200 GOSUB SS
 _9700()                                             // 205 GOSUB ST
 PRINT("SEU NOME, CAPITAO?")                         // 206 PRINT "SEU NOME, CAPITAO?"
 // 207 INPUT X$
-// 210 PRINT AT H+A,N; "CAPITAO: SR ";XS;"      ",,,
+let X$ = "Serafim"
+PRINT_AT(H+A, N, `CAPITAO: SR ${X$}      `)         // 210 PRINT AT H+A,N; "CAPITAO: SR ";XS;"      ",,,    // X$ nome do capitão (o player)
 PRINT("**********************************")         // 212 PRINT "**********************************"
-// 213 PRINT , ,"AGUARDE AS SUAS ORDENS, CAPITAO."
+PRINT(TAB(4) + "AGUARDE AS SUAS ORDENS, CAPITAO.")  // 213 PRINT , ,"AGUARDE AS SUAS ORDENS, CAPITAO."
 // 214 PAUSE M*D
 // 300 DIM V(H,H)
 // 310 DIM Q(H,H)
+let K1 = 5  // TODO montar INT e RND em --> 460 LET K1= INT (RND*L) + H     // K1 numero de inimigos (Klingons)
 // 460 LET K1=INT (RND*L)+H
 // 461 LET K0=K1
 // 462 FOR I=A TO Kl
@@ -83,12 +85,17 @@ PRINT("**********************************")         // 212 PRINT "**************
 // 527 LET Q(I,J)=Q(I,J)+C+INT (RND*E)
 // 528 NEXT J
 // 529 NEXT I
-// 550 LET Dl=(INT (RND*D) +A+K1) *H
+let D1 = 30 // TODO montar INT E RND 550 LET Dl=(INT (RND*D) +A+K1) *H            // 550 LET Dl=(INT (RND*D) +A+K1) *H      // D1 quantidade dias disponíveis
 // 551 LET Q1=INT (RND*F)+B
 // 552 LET Q2=INT (RND*F)+B
 // 553 LET D0=D1
+
 // 600 PRINT AT K-A,N;"EIS AS ORDENS : ",,"
-//           ENTERPRISE DEVE DESTRUIR ";Kl,"ESPACONAVES KLINGON EM " ; Dl ; " DIAS ."
+// ENTERPRISE DEVE DESTRUIR ";Kl,"ESPACONAVES KLINGON EM " ; Dl ; " DIAS ."
+PRINT_AT(K-A, N, "EIS AS ORDENS :")
+PRINT(TAB(4) + `ENTERPRISE DEVE DESTRUIR ${K1}`)
+PRINT(TAB(4) + `ESPACONAVES KLINGON EM ${D1} DIAS .`)
+
 // 601 PRINT " PARA O REABASTECIMENTO HA ";B1, "BASES ESTRELARES. APERTE S CASO ESTEJA PRONTO E BOA SORTE..."
 // 605 PAUSE CC
 // 609 IF INKEY$<>"S" THEN GOTO VAL "605"
@@ -380,7 +387,7 @@ PRINT("**********************************")         // 212 PRINT "**************
 // Apaga a tela e exibe cabeçalho
 function _9600() {
     CLS()                                           // 9600 CLS 
-    PRINT("******** SUPER STARTIREK ********")      // 9601 PRINT "******** SUPER STARTIREK ********""
+    PRINT("******** SUPER STARTREK ********")      // 9601 PRINT "******** SUPER STARTREK ********""
     // 9602 RETURN
 }
 

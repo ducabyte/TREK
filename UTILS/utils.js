@@ -6,7 +6,6 @@ var cursorLinha = 0
 var cursorColuna = 0
 
 function inicializa() {
-    console.log("inicializa")
     for (let i=0; i <= 23; i++) {    // Cria a dimensão K em (F, K)
         tela[i] = new Array(40)
     }
@@ -25,29 +24,56 @@ inicializa()
 
 
 // exibe mensagens na saída (atualmente, a console)
-exports.PRINT = function PRINT(msg) {
+var PRINT = function PRINT(msg) {
 
     let mensagem = msg
     for (let i = 0; i < mensagem.length; i++) {
         tela[cursorLinha][cursorColuna] = mensagem[i]
         cursorColuna++
     }
+
+    console.clear()   // TODO força o clear da tela para não ficar dando scroll no terminal. Melhorar mais pra frente
     
     let bufferLinha = ''
     for (let i = 0; i < 23; i++) {
         for (let j = 0; j < 39; j++) {
             bufferLinha += tela[i][j]
         }
-        console.log(bufferLinha)
-        bufferLinha = ''
-        cursorColuna = 0
-        cursorLinha ++
+        bufferLinha += '\n'
     }
+    console.log(bufferLinha)
+    bufferLinha = ''
+    cursorColuna = 0
+    cursorLinha++
+    // cursorColuna = cursorColuna + msg.length
+    if (cursorLinha >= 23) cursorLinha = 23
+    console.log (cursorLinha + " " + cursorColuna)
 }
 
+var PRINT_AT = function(linha, coluna, msg) {
+    cursorLinha = linha
+    cursorColuna = coluna
+    PRINT(msg)
+}
+
+var TAB = function TAB(qtd) { 
+    let retorno = '' 
+    for (let i = 0; i <= qtd; i++) {
+        retorno = retorno + ' '
+    }
+    return retorno
+}
 
 // TODO implementar quando tivermos uma tela final do jogo
 // apaga a tela
-exports.CLS = function CLS() {
+var CLS = function CLS() {
+    console.clear()
     // throw new  ("NOT IMPLEMENTED")
+}
+
+module.exports = { 
+    PRINT : PRINT,
+    PRINT_AT: PRINT_AT,
+    TAB: TAB,
+    CLS : CLS
 }
