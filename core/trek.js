@@ -60,6 +60,7 @@ PRINT("SEU NOME, CAPITAO?")                         // 206 PRINT "SEU NOME, CAPI
 let X$ = "Serafim"
 PRINT_AT(H+A, N, `CAPITAO: SR ${X$}      `)         // 210 PRINT AT H+A,N; "CAPITAO: SR ";XS;"      ",,,    // X$ nome do capitão (o player)
 PRINT("**********************************")         // 212 PRINT "**********************************"
+// 211 PRINT "PRIMEIRO OFICIAL: SR SPOCK",,,
 PRINT(TAB(4) + "AGUARDE AS SUAS ORDENS, CAPITAO.")  // 213 PRINT , ,"AGUARDE AS SUAS ORDENS, CAPITAO."
 // 214 PAUSE M*D
 // 300 DIM V(H,H)
