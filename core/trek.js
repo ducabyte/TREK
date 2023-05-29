@@ -5,7 +5,7 @@
 
 // TREK by Duca 2023 - adaptação para nodeJS
 
-
+const { PRINT, PRINT_AT, TAB, CLS } = require('../UTILS/utils')
 
 // declaração das constantes e variáveis globais
 const N = eval("0")   // 1 LET N=VAL "0"       // 0
@@ -51,18 +51,21 @@ const C$="CONDICAO "    // 156 LET C$="CONDICAO "
 const B$="AMARELA"      // 157 LET B$="AMARELA"
 const A$="DSNRQCABX"    // 158 LET A$="DSNRQCABX"
 
-// 170 CLS
-// 200 GOSUB SS
-// 205 GOSUB ST
-// 206 PRINT "SEU NOME, CAPITAO?"
+// Inicialização
+CLS()                                               // 170 CLS                                          // apaga a tela
+_9600()                                             // 200 GOSUB SS
+_9700()                                             // 205 GOSUB ST
+PRINT("SEU NOME, CAPITAO?")                         // 206 PRINT "SEU NOME, CAPITAO?"
 // 207 INPUT X$
-// 210 PRINT AT H+A,N; "CAPITAO: SR ";XS;"      "
+let X$ = "Serafim"
+PRINT_AT(H+A, N, `CAPITAO: SR ${X$}      `)         // 210 PRINT AT H+A,N; "CAPITAO: SR ";XS;"      ",,,    // X$ nome do capitão (o player)
+PRINT("**********************************")         // 212 PRINT "**********************************"
 // 211 PRINT "PRIMEIRO OFICIAL: SR SPOCK",,,
-// 212 PRINT "**********************************"
-// 213 PRINT , ,"AGUARDE AS SUAS ORDENS, CAPITAO."
+PRINT(TAB(4) + "AGUARDE AS SUAS ORDENS, CAPITAO.")  // 213 PRINT , ,"AGUARDE AS SUAS ORDENS, CAPITAO."
 // 214 PAUSE M*D
 // 300 DIM V(H,H)
 // 310 DIM Q(H,H)
+let K1 = 5  // TODO montar INT e RND em --> 460 LET K1= INT (RND*L) + H     // K1 numero de inimigos (Klingons)
 // 460 LET K1=INT (RND*L)+H
 // 461 LET K0=K1
 // 462 FOR I=A TO Kl
@@ -83,15 +86,21 @@ const A$="DSNRQCABX"    // 158 LET A$="DSNRQCABX"
 // 527 LET Q(I,J)=Q(I,J)+C+INT (RND*E)
 // 528 NEXT J
 // 529 NEXT I
-// 550 LET Dl=(INT (RND*D) +A+K1) *H
+let D1 = 30 // TODO montar INT E RND 550 LET Dl=(INT (RND*D) +A+K1) *H            // 550 LET Dl=(INT (RND*D) +A+K1) *H      // D1 quantidade dias disponíveis
 // 551 LET Q1=INT (RND*F)+B
 // 552 LET Q2=INT (RND*F)+B
 // 553 LET D0=D1
+
 // 600 PRINT AT K-A,N;"EIS AS ORDENS : ",,"
-//           ENTERPRISE DEVE DESTRUIR ";Kl,"ESPACONAVES KLINGON EM " ; Dl ; " DIAS ."
+// ENTERPRISE DEVE DESTRUIR ";Kl,"ESPACONAVES KLINGON EM " ; Dl ; " DIAS ."
+PRINT_AT(K-A, N, "EIS AS ORDENS :")
+PRINT(TAB(4) + `ENTERPRISE DEVE DESTRUIR ${K1}`)
+PRINT(TAB(4) + `ESPACONAVES KLINGON EM ${D1} DIAS .`)
+
 // 601 PRINT " PARA O REABASTECIMENTO HA ";B1, "BASES ESTRELARES. APERTE S CASO ESTEJA PRONTO E BOA SORTE..."
 // 605 PAUSE CC
 // 609 IF INKEY$<>"S" THEN GOTO VAL "605"
+
 // 620 REM FORMACAO DO QUADRANTE
 // 625 FOR I=A TO F
 // 630 LET Q$(I)="........"
@@ -374,19 +383,28 @@ const A$="DSNRQCABX"    // 158 LET A$="DSNRQCABX"
 // 9500 GOSUB TR
 // 9501 LET D1=D1-R
 // 9505 PRINT AT E , N; "S-GRAVAR" ;TAB N; "D-DIARIO DE BORDO";TAB N ; "N- NAVEGACAO-ESCOLHA DA ROTA";TAB N; "R- SENSOR P/ QUADRANTES VIZINHOS" ; TAB N ; "Q-MAPA DO QUADRANTE " ;TAB N; "C-COMBATE";TAB N; 'A-RELATORIO DE AVARIAS";TAB N; "B-BIBLIOTECA";TAB N; "X-DESEJA DESISTIR"
-// 9510 GOTO P 
-// 9600 CLS 
-// 9601 PRINT "******** SUPER STARTIREK ********""
-// 9602 RETURN
-// 9699 REM DESENHO DA ENTERPRISE'
-// 9700 PRINT AT B,K;", ",------*-------,"
-// 9701 PRINT ",-------------   ""--- ------"""
-// 9702 PRINT " ""---------- --""/ /"
-// 9703 PRINT TAB G;", , ";TAB H+G;"/ /" 
-// 9704 PRINT TAB T; ",---   ------ / /�,"""
-// 9705 PRINT TAB E-A;"""-------------"""
-// 9707 PRINT ,, "USS ENTERPRISE NCC-170",,
-// 9709 RETURN
+// 9510 GOTO P
+
+// Apaga a tela e exibe cabeçalho
+function _9600() {
+    CLS()                                           // 9600 CLS 
+    PRINT("******** SUPER STARTREK ********")      // 9601 PRINT "******** SUPER STARTREK ********""
+    // 9602 RETURN
+}
+
+// TODO implementar
+// Desenho da Enterprise                           // 9699 REM DESENHO DA ENTERPRISE'
+function _9700() {
+    // 9700 PRINT AT B,K;", ",------*-------,"
+    // 9701 PRINT ",-------------   ""--- ------"""
+    // 9702 PRINT " ""---------- --""/ /"
+    // 9703 PRINT TAB G;", , ";TAB H+G;"/ /" 
+    // 9704 PRINT TAB T; ",---   ------ / /�,"""
+    // 9705 PRINT TAB E-A;"""-------------"""
+    // 9707 PRINT ,, "USS ENTERPRISE NCC-170",,
+    // 9709 RETURN
+}
+
 // 9750 LET X=INT (RND*F)+A
 // 9751 LET Y=INT (RND*F)+A
 // 9752 IF Q$(X,Y)<>"." THEN GOTO TT
