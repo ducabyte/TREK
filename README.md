@@ -69,7 +69,7 @@ Interessados no projeto em seu estado final:
         
         iniciou a conversão de variáveis e constantes globais
 
-### live 005 partes 1 e 2
+### live 005 partes 1, 2 e 3
 
     Verificamos valores reais (fracionários) de duas das variáveis globais (r e q) contra valores obtidos pelo original em um emulador.
     Começamos a atacar o código, focando nas exibições de "telas" (comando PRINT do basic original). Para isso, tentamos criar funções com mesmo nome no javascript
